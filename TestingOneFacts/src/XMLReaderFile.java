@@ -99,9 +99,7 @@ public class XMLReaderFile
             System.out.println("These are the contents of the file:"); 
             System.out.println("Keyword: " + doc.getDocumentElement().getNodeName());
             NodeList nodeList = doc.getElementsByTagName("fact");
-            
-            
-         
+
             
             // now XML is loaded as Document in memory, lets convert it to Object List
             List < Fact > factList = new ArrayList < Fact > ();
@@ -135,11 +133,11 @@ public class XMLReaderFile
               		Scanner ww = new Scanner(System.in);
               		int oo = ww.nextInt();
               		Fact obj = new Fact();
-          			FactList objTwo = new FactList();
+          			FactList objTwo = new FactList(b);
               		if(oo == 1)
                 	{
               			
-              			System.out.println(objTwo.search(b, 1)); 		
+              			System.out.println(objTwo.search(b, 1, doc)); 		
             			System.out.println("The program has finished running successfully.");
             			System.exit(0);
         					
@@ -147,7 +145,7 @@ public class XMLReaderFile
               		else if(oo == 2)
                   	{
               			
-              			System.out.print(objTwo.search(b, 2)); 		
+              			System.out.print(objTwo.search(b, 2, doc)); 		
             			//System.out.println("Search Result: " + obj.getAuthor()); 	
             			System.out.println("The program has finished running successfully.");
             			System.exit(0);
@@ -155,7 +153,7 @@ public class XMLReaderFile
               		else if(oo == 3)
                   	{
               			
-              			System.out.print(objTwo.search(b, 3)); 		
+              			System.out.print(objTwo.search(b, 3, doc)); 		
             			//System.out.println("Search Result: " + obj.getFactType()); 
             			System.out.println("The program has finished running successfully.");
             			System.exit(0);
@@ -163,7 +161,7 @@ public class XMLReaderFile
               		else if(oo == 4)
                   	{
               			
-              			System.out.print(objTwo.search(b, 4)); 		
+              			System.out.print(objTwo.search(b, 4, doc)); 		
             			//System.out.println("Search Result: " + obj.getRandom()); 
             			System.out.println("The program has finished running successfully.");
             			System.exit(0);
@@ -182,10 +180,10 @@ public class XMLReaderFile
             else if(mm ==3)
             {
             	System.out.println("This is your search history: "); 
-    			FactList objTwo = new FactList();
-      			System.out.println(objTwo.search(b, 1)); 
-      			System.out.println(objTwo.search(b, 2)); 
-      			System.out.println(objTwo.search(b, 3)); 
+    			FactList objTwo = new FactList(b);
+      			System.out.println(objTwo.search(b, 1, doc)); 
+      			System.out.println(objTwo.search(b, 2, doc)); 
+      			System.out.println(objTwo.search(b, 3, doc)); 
             	System.out.println("The search history was successfully printed.");
     			//Print search history
             	ArrayList<String> searchList = new ArrayList(); 
@@ -211,7 +209,7 @@ public class XMLReaderFile
 }
 }
          
-
+//End 
 				
 		
 						
